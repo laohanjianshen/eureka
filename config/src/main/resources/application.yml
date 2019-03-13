@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/wangzhe194/ylt_cloud_config
+          username: xingpengcheng
+          password: xingpengcheng123
+eureka:
+  client:
+    service-url:
+      defaultZone: http://laohan:123@localhost:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+server:
+  port: 8888
+

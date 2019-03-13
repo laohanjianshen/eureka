@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: myzipkin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://qdsg:qdsg2018@master.qdsgvision.com:8761/eureka,http://qdsg:qdsg2018@backup.qdsgvision.com:8762/eureka
+server:
+  port: 9414

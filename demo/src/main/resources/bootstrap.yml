@@ -1,0 +1,13 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://qdsg:qdsg2018@localhost:8761/eureka/,http://qdsg:qdsg2018@localhost:8762/eureka/
+
+spring:
+  application:
+    name: ylt-test
+ylt-diagnose:
+  ribbon:
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+server:
+  port: 9111

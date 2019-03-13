@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ylt-zipkin
+  security:
+    user:
+      name: laohan
+      password: 123
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8761/eureka
+
+server:
+  port: 9411
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

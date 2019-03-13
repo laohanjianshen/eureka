@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: outpatient
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      profile: dev
+  zipkin:
+    base-url: http://localhost:9411/
+    service:
+      name: outpatient
+    enabled: true
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://laohan:123@localhost:8761/eureka
+server:
+  port: 6789
+feign:
+  client:
+    config:
+      feignName:
+        connectTimeout: 5000
+        readTimeout: 5000
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+logging:
+  level:
+   org.srpingframework.cloud.netflix.feign: debug
